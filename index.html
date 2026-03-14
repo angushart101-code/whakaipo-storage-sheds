@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whakaipo Storage Sheds</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Whakaipo Storage Sheds</h1>
+    </header>
+    <main>
+        <section id="rent">
+            <h2>Rent a Shed</h2>
+            <form id="rentForm">
+                <label for="customerName">Your Name:</label>
+                <input type="text" id="customerName" required>
+                <button type="submit">Rent Shed</button>
+            </form>
+        </section>
+        <section id="manage">
+            <h2>Manage Shed</h2>
+            <form id="manageForm">
+                <label for="ownerPIN">Enter PIN:</label>
+                <input type="password" id="ownerPIN" required>
+                <button type="submit">Manage Shed</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 Whakaipo Storage Sheds</p>
+    </footer>
+</body>
+</html>
+
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+header {
+    background: #35424a;
+    color: #ffffff;
+    padding: 10px 20px;
+    text-align: center;
+}
+main {
+    padding: 20px;
+}
+section {
+    margin-bottom: 20px;
+    padding: 10px;
+    background: #ffffff;
+    border: 1px solid #cccccc;
+}
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #35424a;
+    color: #ffffff;
+}
+
+// script.js
+document.getElementById('rentForm').addEventListener('submit', function (e) {
+    e.preventDefault(); // Prevent the default form submission
+    const customerName = document.getElementById('customerName').value;
+    alert(`Thank you, ${customerName}, for renting a shed!`);
+});
+
+document.getElementById('manageForm').addEventListener('submit', function (e) {
+    e.preventDefault(); // Prevent the default form submission
+    const ownerPIN = document.getElementById('ownerPIN').value;
+    if (ownerPIN === '1234') {
+        alert('Access granted to manage sheds.');
+    } else {
+        alert('Access denied. Incorrect PIN.');
+    }
+});
